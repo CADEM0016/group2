@@ -7,7 +7,7 @@ function [GeomObj, massObj] = wing(obj)
 % Folding : first-order span + hinge mass penalties
 
 %% ============================================================
-%                 PLANFORM GEOMETRY
+%                 PLATFORM GEOMETRY
 % =============================================================
 
 % Quarter-chord sweep estimate (transonic transport)
@@ -32,7 +32,7 @@ c = fminsearch(@(x)(get_areas(x,L2,L3,R_f,tr,SweepQtrChord) - S).^2, c0);
 [~, c_t, c_r, A1, A2, A3] = get_areas(c,L2,L3,R_f,tr,SweepQtrChord);
 
 %% ============================================================
-%                 PLANFORM POINTS
+%                 PLATFORM POINTS
 % =============================================================
 
 ys = [-b/2 -obj.KinkPos -R_f 0 R_f obj.KinkPos b/2]';
